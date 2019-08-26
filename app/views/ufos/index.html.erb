@@ -1,1 +1,23 @@
-<p>index</p>
+<div class="banner text-center">
+  <div class="container">
+    <h1>AIR UFO</h1>
+    <p>U ask UFO? We say no problem...</p>
+    <%= link_to "U own UFO?", new_ufo_path, class: "btn btn-outline-dark btn-lg" %>
+    <p>.............</p>
+    <%= link_to "Or u wanna rent one?", new_ufo_path, class: "btn btn-outline-dark btn-lg" %>
+  </div>
+</div>
+<div class="cards container mt-5">
+    <% @ufos.each do |ufo| %>
+      <div class="card" style="width: 18rem;">
+        <%= image_tag "ufo1.jpg", alt: "mojito", class: "card-img-top" %>
+        <%#= cl_image_tag photo_or_fallback(cocktail), style: "height: 180px; object-fit: cover;" %>
+        <div class="card-body">
+          <h5 class="card-title"><%= ufo.brand %></h5>
+          <p class="card-text"><%= ufo.speed %></p>
+        </div>
+      </div>
+  <% end %>
+  </div>
+  
+</div>
