@@ -11,8 +11,12 @@ class UfosController < ApplicationController
 
   def create
     @ufo = Ufo.new(ufo_params)
-    @ufo.save
-    redirect_to root_path
+    @ufo.owner = current_user
+    if @ufo.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private
