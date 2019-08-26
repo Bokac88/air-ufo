@@ -10,10 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_26_114637) do
+ActiveRecord::Schema.define(version: 2019_08_26_144707) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "rentals", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.bigint "ufo_id"
+    t.bigint "customer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_rentals_on_customer_id"
+    t.index ["ufo_id"], name: "index_rentals_on_ufo_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.text "content"
+    t.bigint "rental_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["rental_id"], name: "index_reviews_on_rental_id"
+  end
+
+  create_table "ufos", force: :cascade do |t|
+    t.string "brand"
+    t.integer "speed"
+    t.integer "age"
+    t.integer "price"
+    t.text "description"
+    t.bigint "owner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_id"], name: "index_ufos_on_owner_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +59,8 @@ ActiveRecord::Schema.define(version: 2019_08_26_114637) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "rentals", "ufos"
+  add_foreign_key "rentals", "users", column: "customer_id"
+  add_foreign_key "reviews", "rentals"
+  add_foreign_key "ufos", "users", column: "owner_id"
 end
