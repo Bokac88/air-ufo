@@ -9,7 +9,7 @@ class UfosController < ApplicationController
     @ufo = Ufo.new
     authorize @ufo
   end
-  
+
   def create
     @ufo = Ufo.new(ufo_params)
     @ufo.owner = current_user
@@ -23,6 +23,18 @@ class UfosController < ApplicationController
   def show
     @ufo = Ufo.find(params[:id])
     authorize @ufo
+  end
+
+  def edit
+    @ufo = Ufo.find(params[:id])
+    authorize @ufo
+  end
+
+  def update
+    @ufo = Ufo.find(params[:id])
+    authorize @ufo
+    @ufo.update(ufo_params)
+    redirect_to @ufo
   end
 
   private
