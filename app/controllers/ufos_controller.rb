@@ -1,6 +1,6 @@
 class UfosController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
-  
+
   def index
     @ufos = Ufo.all
   end
@@ -17,6 +17,11 @@ class UfosController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @ufo = Ufo.find(params[:id])
+    # raise
   end
 
   private

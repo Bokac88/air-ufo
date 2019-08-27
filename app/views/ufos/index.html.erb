@@ -16,6 +16,7 @@
         <div class="card-body">
           <p class="card-text"><%= ufo.description %></p>
           <p class="card-text"><strong><%= ufo.price %></strong> Alien money</p>
+          <%= link_to 'See details', ufo_path(ufo.id) %>
         </div>
       </div>
   <% end %>

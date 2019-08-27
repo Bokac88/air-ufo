@@ -1,0 +1,8 @@
+<h1>SHOW PAGE</h1>
+<p>Brand: <%= @ufo.brand %></p>
+<p>Owner: <%= @ufo.owner.email %></p>
+<p>Speed: <%= @ufo.speed %> MillionKm/h</p>
+<p>Age: <%= @ufo.age %> years</p>
+<p>Price: <%= @ufo.price %> Alien Money</p>
+<p>Description <%= @ufo.description %></p>
+<%= link_to 'Back to home page', root_path %>
