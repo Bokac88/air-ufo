@@ -27,19 +27,19 @@ class UfosController < ApplicationController
     # @ufo = Ufo.find(params[:id])
     authorize @ufo
   end
-  
+
   def edit
     # @ufo = Ufo.find(params[:id])
     authorize @ufo
   end
-  
+
   def update
     # @ufo = Ufo.find(params[:id])
     authorize @ufo
     @ufo.update(ufo_params)
     redirect_to @ufo
   end
-  
+
   def destroy
     # byebug
     @ufo = Ufo.find(params[:id])
