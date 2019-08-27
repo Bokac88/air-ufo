@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'ufos#index'
-  resources :ufos
+
+  resources :ufos do
+    member do
+      resources :rentals, only: [:create]
+    end
+  end
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
