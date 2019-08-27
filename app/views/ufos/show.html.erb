@@ -6,3 +6,6 @@
 <p>Price: <%= @ufo.price %> Alien Money</p>
 <p>Description <%= @ufo.description %></p>
 <%= link_to 'Back to home page', root_path %>
+<% if policy(Ufo).destroy? %>
+  <%= link_to 'Delete this UFO', ufo_path(@ufo), method: :delete, data: {confirm: "Are you sure?"} %>
+<% end %>
