@@ -1,10 +1,14 @@
 class UfosController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
-  before_action :get_ufo, only: [:show, :edit, :update]
+  before_action :get_ufo, only: [:show, :edit, :update, :destroy]
   skip_after_action :verify_authorized, only: :list_own
 
   def index
     @ufos = policy_scope(Ufo)
+  end
+
+  def show
+    authorize @ufo
   end
 
   def new
@@ -23,26 +27,17 @@ class UfosController < ApplicationController
     end
   end
 
-  def show
-    # @ufo = Ufo.find(params[:id])
-    authorize @ufo
-  end
-
   def edit
-    # @ufo = Ufo.find(params[:id])
     authorize @ufo
   end
 
   def update
-    # @ufo = Ufo.find(params[:id])
     authorize @ufo
     @ufo.update(ufo_params)
     redirect_to @ufo
   end
 
   def destroy
-    # byebug
-    @ufo = Ufo.find(params[:id])
     authorize @ufo
     @ufo.destroy
 
