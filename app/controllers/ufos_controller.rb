@@ -2,13 +2,14 @@ class UfosController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   
   def index
-    @ufos = Ufo.all
+    @ufos = policy_scope(Ufo)
   end
 
   def new
     @ufo = Ufo.new
+    authorize @ufo
   end
-
+  
   def create
     @ufo = Ufo.new(ufo_params)
     @ufo.owner = current_user

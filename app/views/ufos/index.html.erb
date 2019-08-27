@@ -2,7 +2,9 @@
   <div class="container">
     <h1>AIR UFO</h1>
     <p>U ask UFO? We say no problem...</p>
-    <%= link_to "U own UFO?", new_ufo_path, class: "btn btn-outline-dark btn-lg" %>
+    <% if policy(Ufo).create? %>
+      <%= link_to "U own UFO?", new_ufo_path, class: "btn btn-outline-dark btn-lg" %>
+    <% end %>
     <p>.............</p>
     <%= link_to "Or u wanna rent one?", new_ufo_path, class: "btn btn-outline-dark btn-lg" %>
   </div>
