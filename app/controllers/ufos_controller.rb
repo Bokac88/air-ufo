@@ -1,6 +1,7 @@
 class UfosController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :get_ufo, only: [:show, :edit, :update]
+  skip_after_action :verify_authorized, only: :list_own
 
   def index
     @ufos = policy_scope(Ufo)
@@ -46,6 +47,10 @@ class UfosController < ApplicationController
     @ufo.destroy
 
     redirect_to root_path
+  end
+
+  def list_own
+    @ufos = policy_scope(Ufo).where(owner_id: current_user.id)
   end
 
   private
