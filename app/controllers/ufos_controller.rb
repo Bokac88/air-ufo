@@ -22,7 +22,7 @@ class UfosController < ApplicationController
 
   def show
     @ufo = Ufo.find(params[:id])
-    # raise
+    authorize @ufo
   end
 
   private
