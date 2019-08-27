@@ -1,0 +1,17 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 12px;
+  height: 150px;
+}
+
+.card {
+  position: relative;
+}
+
+.card-absolute {
+  position: absolute;
+  font-size: 20px;
+  top: 10px;
+  left: 10px;
+}
