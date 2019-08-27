@@ -4,24 +4,21 @@ class UfoPolicy < ApplicationPolicy
       scope.all
     end
   end
-
-  def update?
-    true
-  end
-
+  
   def create?
     true
   end
-
+  
   def show?
     true
   end
+  
+  def update?
+    record.owner == user
+  end
 
-  # def update?
-  #   record.user == user
-  # end
-
-  # def destroy?
-  #   record.user == user
-  # end
+  def destroy?
+    record.owner == user
+    # true
+  end
 end
