@@ -4,7 +4,15 @@
 <p>Speed: <%= @ufo.speed %> MillionKm/h</p>
 <p>Age: <%= @ufo.age %> years</p>
 <p>Price: <%= @ufo.price %> Alien Money</p>
-<p>Description <%= @ufo.description %></p>
+<p>Description: <%= @ufo.description %></p>
+<p>Availability: <%= @ufo.availability %>
+  <% if @ufo.availability %>
+<%= link_to 'Rent!', rentals_path(@ufo), method: :post %>
+<% end %>
+</p>
+
+
+
 <% if policy(@ufo).edit? %>
   <p><%= link_to 'Edit', edit_ufo_path(@ufo.id) %></p>
 <% end %>
