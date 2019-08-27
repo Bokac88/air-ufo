@@ -1,5 +1,8 @@
 $green: #27AE60;
 
+.title {
+  color: white;
+}
 
 .navbar-lewagon {
   justify-content: space-between;
@@ -25,4 +28,22 @@ $green: #27AE60;
 
 .btn {
   color: white;
+}
+
+.main-logo {
+  padding-left: 10px;
+  width: 60px;
+
+  path {
+    fill: #fff;
+  }
+}
+
+.avatar {
+  margin-right: 10px;
+}
+
+.nav-item {
+
+  margin-right: 10px;
 }
