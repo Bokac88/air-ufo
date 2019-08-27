@@ -5,4 +5,5 @@
 <p>Age: <%= @ufo.age %> years</p>
 <p>Price: <%= @ufo.price %> Alien Money</p>
 <p>Description <%= @ufo.description %></p>
+<p><%= link_to 'Edit', edit_ufo_path(@ufo.id) %></p>
 <%= link_to 'Back to home page', root_path %>
