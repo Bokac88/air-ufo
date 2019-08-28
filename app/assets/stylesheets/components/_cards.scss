@@ -1,15 +1,15 @@
-// .cards {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr;
-//   grid-gap: 12px;
-//   height: 150px;
-// }
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 12px;
+  height: 150px;
+}
 
 .card {
   margin: 20px;
-  height: 340px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
+  min-height: 380px;
 }
 
 .card:hover{
