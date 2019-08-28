@@ -1,25 +1,30 @@
 <div class="banner text-center">
   <div class="container">
     <h1>AIR UFO</h1>
-    <p>U ask UFO? We say no problem...</p>
+    <p>You ask for a UFO? We say no problem...</p>
     <% if policy(Ufo).create? %>
-      <%= link_to "U own UFO?", new_ufo_path, class: "btn btn-outline-dark btn-lg" %>
+      <%= link_to "Do you own a UFO?", new_ufo_path, class: "button btn btn-lg" %>
     <% end %>
-    <p>.............</p>
-    <%= link_to "Or u wanna rent one?", new_ufo_path, class: "btn btn-outline-dark btn-lg" %>
   </div>
 </div>
-<div class="cards container mt-5">
+<div class="container mt-5">
+  <div class="row">
     <% @ufos.each do |ufo| %>
-      <div class="card" style="width: 18rem;">
-        <%= image_tag "ufo1.jpg", alt: "ufo-image", class: "card-img-top" %>
-        <%#= cl_image_tag photo_or_fallback(cocktail), style: "height: 180px; object-fit: cover;" %>
-          <p class="card-text card-absolute"><%= ufo.brand %></p>
-        <div class="card-body">
-          <p class="card-text"><%= ufo.description %></p>
-          <p class="card-text"><strong><%= ufo.price %></strong> Alien money</p>
-          <%= link_to 'See details', ufo_path(ufo.id) %>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="link">
+        <%= link_to ufo_path(ufo.id), class: "link" do %>
         </div>
+        <div class="card">
+          <%= image_tag "ufo1.jpg", alt: "ufo-image", class: "card-img-top" %>
+          <%#= cl_image_tag photo_or_fallback(cocktail), style: "height: 180px; object-fit: cover;" %>
+          <div class="card-body">
+            <p class="spaceship_name"><%= ufo.brand %></p>
+            <p class="features"> <strong> Main Features: </strong> <%= ufo.description %></p>
+            <p class="price"><strong> Price: </strong><%= ufo.price %> Space$</p>
+          </div>
+        </div>
+      <% end %>
       </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

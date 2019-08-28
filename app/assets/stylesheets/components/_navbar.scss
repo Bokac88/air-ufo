@@ -4,6 +4,16 @@ $green: #27AE60;
   color: white;
 }
 
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 60px;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: $green;
@@ -12,6 +22,7 @@ $green: #27AE60;
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -44,6 +55,5 @@ $green: #27AE60;
 }
 
 .nav-item {
-
   margin-right: 10px;
 }

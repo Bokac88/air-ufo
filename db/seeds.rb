@@ -31,7 +31,7 @@ puts 'Creating 20 fake ufos...'
     speed: rand(9_899..19_000),
     age: rand(0..5),
     price: rand(100_000..500_000),
-    description: Faker::Movies::StarWars.wookiee_sentence,
+    description:  Faker::Vehicle.car_options.sample(3).join(", "),
     owner: User.all.sample
 )
   ufo.save!
