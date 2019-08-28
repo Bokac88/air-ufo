@@ -1,7 +1,7 @@
-class RentalPolicy < ApplicationPolicy
+class ReviewPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where(customer_id: user.id)
+      scope.all
     end
   end
 

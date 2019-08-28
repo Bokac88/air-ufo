@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="text-center my-4">YOUR RENTALS</h1>
+  <div class="cards">
+    <% @rentals.each do |rental| %>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <p class="card-text"><strong>Rental:</strong> <%= rental.ufo.brand %></p>
+          <p class="card-text"><strong>Start date:</strong> <%= rental.start_date %></p>
+          <p class="card-text"><strong>End date:</strong> <%= rental.end_date %></p>
+          <% unless rental.review.present? %>
+            <%= link_to 'Leave a review', new_rental_review_path(rental.id), class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
