@@ -8,5 +8,8 @@ Rails.application.routes.draw do
     end
     resources :rentals, only: [:create]
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :rentals, only: %i[index] do
+    resources :reviews, only: %i[new create]
+  end
 end
