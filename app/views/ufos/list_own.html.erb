@@ -1,17 +1,26 @@
-<div class="cards container mt-5">
+<div class="container mt-5">
+  <div class="row">
     <% @ufos.each do |ufo| %>
-      <div class="card" style="width: 18rem;">
-        <%= image_tag "ufo1.jpg", alt: "ufo-image", class: "card-img-top" %>
-        <%#= cl_image_tag photo_or_fallback(cocktail), style: "height: 180px; object-fit: cover;" %>
-          <p class="card-text card-absolute"><%= ufo.brand %></p>
-        <div class="card-body">
-          <% if ufo.availability %>
+      <div class="col-xs-12 col-sm-6 col-lg-3">
+        <div class="link">
+        <%= link_to ufo_path(ufo.id), class: "link" do %>
+        </div>
+        <div class="card">
+          <%= image_tag "ufo1.jpg", alt: "ufo-image", class: "card-img-top" %>
+          <%#= cl_image_tag photo_or_fallback(cocktail), style: "height: 180px; object-fit: cover;" %>
+          <div class="card-body">
+            <p class="spaceship_name"><%= ufo.brand %></p>
+            <p class="features"> <strong> Main Features: </strong> <%= ufo.description %></p>
+            <p class="price"><strong> Price: </strong><%= ufo.price %> Space$</p>
+            <% if ufo.availability %>
             <p class="card-text">Available</p>
           <% else %>
             <p class="card-text">Rented</p>
           <% end %>
-          <%= link_to 'See details', ufo_path(ufo.id) %>
+          </div>
         </div>
+      <% end %>
       </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
