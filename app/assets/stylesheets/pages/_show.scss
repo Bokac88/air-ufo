@@ -1,0 +1,54 @@
+.container_show {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+img .details {
+  align: center;
+}
+
+.picture img {
+  width: 100%;
+}
+
+.button {
+  padding: 10px;
+}
+
+.display_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: flex-end;
+}
+
+.details {
+  margin: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+
+.left_details {
+  text-align: left;
+  width: 400px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.right_details {
+  text-align: left;
+  width: 250px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  height: 325px;
+}
+
+h3 {
+  color: $green
+}
+
+.text-container {
+  padding: 20px;
+}
