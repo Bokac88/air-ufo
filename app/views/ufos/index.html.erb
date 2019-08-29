@@ -1,13 +1,37 @@
-<div class="banner text-center">
+<% content_for :navbar_class, 'navbar-lewagon-transparent' %>
+<div class="banner text-center" id="home-banner">
   <h1>A I R&nbsp;&nbsp;&nbsp;U F O</h1>
   <div class="sub-title">
     <h4>You ask for a UFO? We say no problem!</h4>
   </div>
-  <% if policy(Ufo).create? %>
-    <%= link_to "Do you own a UFO?", new_ufo_path, class: "button btn btn-lg" %>
-  <% end %>
+  <div class="btn-rent-create">
+      <% if policy(Ufo).create? %>
+        <div class="rent">
+          <%= link_to "Rent a UFO?", "#search", class: "button btn btn-lg btn-banner" %>
+        </div>
+        <div class="list">
+          <%= link_to "List your UFO?", new_ufo_path, class: "button btn btn-lg btn-banner" %>
+        </div>
+      <% end %>
+    </div>
 </div>
-<div class="container mt-5">
+
+<a name="search"></a>
+<div class="container mt-5 ">
+  <div class="search-bar">
+    <div>
+      <%= form_tag search_ufos_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find UFOs"
+        %>
+    </div>
+    <div>
+        <%= submit_tag "Search", class: "btn btn-primary btn-search" %>
+    </div>
+      <% end %>
+  </div>
   <div class="row">
     <% @ufos.each do |ufo| %>
       <div class="col-xs-12 col-sm-6 col-lg-3">
