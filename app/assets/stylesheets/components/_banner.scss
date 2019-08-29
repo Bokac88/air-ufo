@@ -4,6 +4,7 @@
   background-position: center;
   padding: 100px 0;
   height: 100vh;
+  position: relative;
 
   h1 {
     margin-top: -3vh;
@@ -21,9 +22,10 @@
     flex-direction: column;
   }
 
+
   .btn-banner {
     margin-top: 20vh;
-    color: #white !important;
+    color: white !important
     text-transform: uppercase;
     background: transparent;
     border: 1px solid white !important;
@@ -33,8 +35,9 @@
     width: 197px;
   }
 
+
   .btn-banner:hover {
-    font-color: white !important;
+    color: white !important;
     font-weight: 700 !important;
     letter-spacing: 1px;
     background: none;
@@ -47,4 +50,3 @@
     margin-top: -10vh;
   }
 }
-

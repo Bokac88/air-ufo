@@ -1,20 +1,18 @@
 <% content_for :navbar_class, 'navbar-lewagon-transparent' %>
-
 <div class="banner text-center" id="home-banner">
-      <h1>A I R&nbsp;&nbsp;&nbsp;U F O</h1>
-    <div class="sub-title">
-      <h4>You ask for a UFO? We say no problem!</h4>
-    </div>
-    <div class="btn-rent-create">
-        <% if policy(Ufo).create? %>
+  <h1>A I R&nbsp;&nbsp;&nbsp;U F O</h1>
+  <div class="sub-title">
+    <h4>You ask for a UFO? We say no problem!</h4>
+  </div>
+  <div class="btn-rent-create">
+      <% if policy(Ufo).create? %>
         <div class="rent">
           <%= link_to "Rent a UFO?", "#search", class: "button btn btn-lg btn-banner" %>
         </div>
         <div class="list">
           <%= link_to "List your UFO?", new_ufo_path, class: "button btn btn-lg btn-banner" %>
         </div>
-          <% end %>
-
+      <% end %>
     </div>
 </div>
 

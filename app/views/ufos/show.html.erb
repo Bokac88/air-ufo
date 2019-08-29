@@ -45,13 +45,31 @@
       <p><strong>Location:</strong> Somewhere</p>
       <p><strong>Price:</strong> <%= @ufo.price %> Space$</p>
     </div>
+
     <div class="display_buttons">
       <% if @ufo.availability %>
-        <%= link_to 'Availabe Rent Now!', ufo_rentals_path(@ufo), method: :post , class: "btn btn-success btn-rent" %>
+        <%= form_tag ufo_rentals_path(@ufo) do %>
+          <div class="input-daterange input-group" id="datepicker">
+            <%= text_field_tag :start_date,
+              '',
+              class: "input-sm form-control datepicker",
+              placeholder: "Pick a start date"
+            %>
+          </div>
+          <div class="input-daterange input-group" id="datepicker">
+            <%= text_field_tag :end_date,
+              '',
+              class: "input-sm form-control datepicker",
+              placeholder: "Pick an end date"
+            %>
+          </div>
+          <div class="btn-mg-top">
+          <%= submit_tag 'Availabe Rent Now!', class: "btn btn-success btn-rent" %>
+          </div>
+        <% end %>
       <% else %>
         <p>NOT AVAILABLE</p>
       <% end %>
     </div>
   </div>
 </div>
-
