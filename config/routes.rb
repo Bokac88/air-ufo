@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :ufos do
     collection do
       get :list_own
+      get 'search', to: 'ufos#search'
     end
     resources :rentals, only: [:create]
   end
