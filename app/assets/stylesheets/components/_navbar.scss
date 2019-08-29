@@ -41,12 +41,26 @@ $green: #27AE60;
   color: white;
 }
 
+@keyframes move-up {
+  0% {top: 500px;}
+  100% {top: 45px;}
+}
+
 .main-logo {
   padding-left: 10px;
   width: 60px;
 
   path {
     fill: #fff;
+  }
+
+  &:hover {
+    #human {
+      display: block;
+      animation-name: move-up;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+    }
   }
 }
 
@@ -56,4 +70,12 @@ $green: #27AE60;
 
 .nav-item {
   margin-right: 10px;
+}
+
+#human {
+  width: 30px;
+  position: absolute;
+  left: 30px;
+  top: 500px;
+  display: none;
 }
