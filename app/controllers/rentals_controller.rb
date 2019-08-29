@@ -5,7 +5,10 @@ class RentalsController < ApplicationController
 
   def create
     @ufo = Ufo.find(params[:ufo_id])
-    @rental = Rental.new(ufo_id: @ufo.id, customer_id: current_user.id, start_date: Date.today, end_date: (Date.today + 1))
+    @rental = Rental.new(ufo_id: @ufo.id,
+                         customer_id: current_user.id,
+                         start_date: params[:start_date],
+                         end_date: params[:end_date])
     authorize @rental
     @rental.save
     @ufo.availability = false
