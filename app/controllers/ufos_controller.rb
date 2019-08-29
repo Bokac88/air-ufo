@@ -3,6 +3,11 @@ class UfosController < ApplicationController
   before_action :get_ufo, only: [:show, :edit, :update, :destroy]
   skip_after_action :verify_authorized, only: :list_own
 
+  def search
+    @ufos = Ufo.search_by_brand_and_description(params[:query])
+    authorize @ufos
+  end
+
   def index
     @ufos = policy_scope(Ufo)
   end
