@@ -1,9 +1,11 @@
 <div class="container_show">
   <div class="details left_details">
-    <div class="picture"><%= image_tag "ufo1.jpg", alt: "ufo-image" %></div>
+    <div class="picture">
+      <%= image_tag "ufo1.jpg", alt: "ufo-image" %>
+    </div>
     <div class="text-container">
-      <p><h3><%= @ufo.brand %></h3></p>
-      <p><strong>Description:</strong> <%= @ufo.description %></p>
+      <h3 class="my-3"><%= @ufo.brand %></h3>
+      <p><strong>Features:</strong> <%= @ufo.description %></p>
       <p><strong>Owner:</strong> <%= @ufo.owner.email %></p>
       <p><strong>Speed:</strong> <%= @ufo.speed %> MillionKm/h</p>
       <p><strong>Age:</strong> <%= @ufo.age %> years</p>
@@ -14,31 +16,42 @@
         <p><%= link_to 'Edit', edit_ufo_path(@ufo.id), class: "btn btn-primary" %></p>
         <% end %>
       </div>
-
       <div class="button"><% if policy(@ufo).destroy? && @ufo.availability %>
         <%= link_to 'Delete this UFO', ufo_path(@ufo), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
-        <% end %></div>
+        <% end %>
       </div>
-
     </div>
-
-    <div class="details right_details picture picture_right">
-      <%= image_tag "map.png", alt: "map-image" %>
-      <div class="text-container">
-        <p><strong>Location:</strong> Somewhere</p>
-        <!-- <p>Availability: <%= @ufo.availability %> -->
-          <p><strong>Price:</strong> <%= @ufo.price %> Space$</p>
-        </div>
-        <div class="display_buttons">
-          <% if @ufo.availability %>
-          <%= link_to 'Availabe Rent Now!', ufo_rentals_path(@ufo), method: :post , class: "btn btn-success" %>
-          <% else %>
-            <p>NOT AVAILABLE</p>
+    <hr class="style-four">
+    <div class="reviews-container px-3">
+      <%# <h3 class="mb-3">Reviews:</h3> %>
+      <% if @ufo.reviews.empty? %>
+        <p class="text-center">There is no reviews for this UFO</p>
+      <% else %>
+        <div class="p-3">
+          <% @ufo.reviews.each do |review| %>
+            <%= image_tag review.rental.customer.photo, class: "avatar" %>
+            <div class="my-3">
+              <%= review.content %>
+            </div>
+            <hr>
           <% end %>
-          </div>
-      </div>
+        </div>
+      <% end %>
     </div>
-
-
-
+  </div>
+  <div class="details right_details picture picture_right">
+    <%= image_tag "map.png", alt: "map-image" %>
+    <div class="text-container">
+      <p><strong>Location:</strong> Somewhere</p>
+      <p><strong>Price:</strong> <%= @ufo.price %> Space$</p>
+    </div>
+    <div class="display_buttons">
+      <% if @ufo.availability %>
+        <%= link_to 'Availabe Rent Now!', ufo_rentals_path(@ufo), method: :post , class: "btn btn-success btn-rent" %>
+      <% else %>
+        <p>NOT AVAILABLE</p>
+      <% end %>
+    </div>
+  </div>
+</div>
 
