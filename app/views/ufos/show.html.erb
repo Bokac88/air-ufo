@@ -11,12 +11,13 @@
       <p><strong>Age:</strong> <%= @ufo.age %> years</p>
     </div>
     <div class="display_buttons">
-      <div class="button">
+      <div class="p-3">
         <% if policy(@ufo).edit? %>
-        <p><%= link_to 'Edit', edit_ufo_path(@ufo.id), class: "btn btn-primary" %></p>
+        <%= link_to 'Edit', edit_ufo_path(@ufo.id), class: "btn btn-primary" %>
         <% end %>
       </div>
-      <div class="button"><% if policy(@ufo).destroy? && @ufo.availability %>
+      <div class="p-3">
+        <% if policy(@ufo).destroy? && @ufo.availability %>
         <%= link_to 'Delete this UFO', ufo_path(@ufo), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
         <% end %>
       </div>
@@ -25,7 +26,7 @@
     <div class="reviews-container px-3">
       <%# <h3 class="mb-3">Reviews:</h3> %>
       <% if @ufo.reviews.empty? %>
-        <p class="text-center">There is no reviews for this UFO</p>
+        <p class="text-center">There are no reviews for this UFO</p>
       <% else %>
         <div class="p-3">
           <% @ufo.reviews.each do |review| %>
@@ -46,30 +47,39 @@
       <p><strong>Price:</strong> <%= @ufo.price %> Space$</p>
     </div>
 
-    <div class="display_buttons">
-      <% if @ufo.availability %>
-        <%= form_tag ufo_rentals_path(@ufo) do %>
-          <div class="input-daterange input-group" id="datepicker">
-            <%= text_field_tag :start_date,
-              '',
-              class: "input-sm form-control datepicker",
-              placeholder: "Pick a start date"
-            %>
-          </div>
-          <div class="input-daterange input-group" id="datepicker">
-            <%= text_field_tag :end_date,
-              '',
-              class: "input-sm form-control datepicker",
-              placeholder: "Pick an end date"
-            %>
-          </div>
-          <div class="btn-mg-top">
-          <%= submit_tag 'Availabe Rent Now!', class: "btn btn-success btn-rent" %>
-          </div>
-        <% end %>
+    <% if Ufo.find(params[:id]).owner_id == current_user.id %>
+      <div class="rent_message maincolor">
+        <h5>Your UFO is currently</h5>
+        <h5>listed for renting</h5>
+      </div>
       <% else %>
-        <p>NOT AVAILABLE</p>
-      <% end %>
-    </div>
+      <div class="display_buttons">
+        <% if @ufo.availability %>
+          <%= form_tag ufo_rentals_path(@ufo) do %>
+            <div class="input-daterange input-group" id="datepicker">
+              <%= text_field_tag :start_date,
+                '',
+                class: "input-sm form-control datepicker",
+                placeholder: "Pick a start date"
+              %>
+            </div>
+            <div class="input-daterange input-group" id="datepicker">
+              <%= text_field_tag :end_date,
+                '',
+                class: "input-sm form-control datepicker",
+                placeholder: "Pick an end date"
+              %>
+            </div>
+            <div class="btn-mg-top">
+            <%= submit_tag 'Available Rent Now!', class: "btn btn-success btn-rent" %>
+            </div>
+          <% end %>
+        <% else %>
+        <div class="rent_message text-danger">
+          <h5>Not Available</h5>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
