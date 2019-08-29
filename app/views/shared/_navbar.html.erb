@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-dark navbar-lewagon scrolling-navbar">
   <div class="left_part d-flex">
     <div>
       <%= link_to root_path, class: "navbar-brand main-logo" do %>
@@ -25,9 +25,6 @@
 </g>
 </svg>
     </div>
-    <div>
-      <h1 class ="title" >Air Ufo</h1>
-    </div>
     <% end %>
   </div>
 
@@ -49,8 +46,8 @@
         <% end %>
           <div class="dropdown-menu dropdown-menu-right" ari-labelledby="navbarDropdown">
             <%= link_to "My Ufo's", list_own_ufos_path, class: "dropdown-item" %>
-            <%= link_to "Rented UFO's", rentals_path, class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to "Rented Ufo's", rentals_path, class: "dropdown-item" %>
+            <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       <% else %>
