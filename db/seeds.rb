@@ -53,10 +53,10 @@ puts 'Finished!'
 
 
 puts 'Creating 20 fake reviews...'
-20.times do
+40.times do
   review = Review.new(
     rating: rand(1..5),
-    content:  Faker::Vehicle.car_options,
+    content:  Faker::Quote.yoda,
     rental: Rental.all.sample
 )
   review.save!
