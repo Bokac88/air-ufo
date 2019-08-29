@@ -1,11 +1,13 @@
 <div class="banner text-center">
-  <div class="container">
-    <h1>AIR UFO</h1>
-    <p>You ask for a UFO? We say no problem...</p>
-    <% if policy(Ufo).create? %>
+
+      <h1>A I R&nbsp;&nbsp;&nbsp;U F O</h1>
+    <div class="sub-title">
+      <h4>You ask for a UFO? We say no problem!</h4>
+    </div>
+      <% if policy(Ufo).create? %>
       <%= link_to "Do you own a UFO?", new_ufo_path, class: "button btn btn-lg" %>
     <% end %>
-  </div>
+
 </div>
 <div class="container mt-5">
   <div class="row">
