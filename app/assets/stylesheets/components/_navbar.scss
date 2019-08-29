@@ -1,10 +1,5 @@
 $green: #27AE60;
 
-.title {
-  color: white;
-}
-
-
 .navbar {
   position: fixed;
   top: 0;
@@ -14,15 +9,22 @@ $green: #27AE60;
   height: 60px;
 }
 
-.navbar-lewagon {
-  justify-content: space-between;
-  background: transparent;
+.nav-link {
+  color: white;
 }
 
+.navbar-lewagon {
+  justify-content: space-between;
+  background-color: green;
+  transition: 0.5s background-color ease;
+}
+
+.navbar-lewagon-transparent {
+  background-color: transparent;
+}
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
-
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -37,8 +39,13 @@ $green: #27AE60;
     color: white;
 }
 
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+}
+
 .btn {
   color: white;
+
 }
 
 .main-logo {
@@ -54,6 +61,15 @@ $green: #27AE60;
   margin-right: 10px;
 }
 
-.nav-item {
+.btn-login  {
   margin-right: 10px;
+  color: white!important;
+  font-size: 18px;
+
+}
+
+.btn-register {
+  margin-right: 10px;
+  color: white!important;
+  font-size: 18px;
 }

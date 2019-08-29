@@ -6,20 +6,23 @@
   height: 100vh;
 
   h1 {
-    margin-top: -20px;
+    margin-top: -3vh;
     color: white;
     font-size: 80px;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   }
 
   h4 {
-    margin-top: 35px;
+    margin-top: 3vh;
     color: white;
-
   }
 
-  .button {
-    margin-top: 250px;
+  .btn-banner {
+    flex-direction: column;
+  }
+
+  .btn-banner {
+    margin-top: 20vh;
     color: #white !important;
     text-transform: uppercase;
     background: transparent;
@@ -27,9 +30,10 @@
     display: inline-block;
     transition: all 0.3s ease 0s;
     border-radius: 3px;
+    width: 197px;
   }
 
-  .button:hover {
+  .btn-banner:hover {
     font-color: white !important;
     font-weight: 700 !important;
     letter-spacing: 1px;
@@ -37,6 +41,10 @@
     transition: all 0.3s ease 0s;
     border: 1px solid black !important;
     border-radius: 3px;
+  }
+
+  .list {
+    margin-top: -10vh;
   }
 }
 
