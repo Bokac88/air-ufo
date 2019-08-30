@@ -1,33 +1,33 @@
 <div class="container">
-  <% if @rentals.empty? %>
-    <div class="container-list-own">
-      <h1>You have no rented UFOS :(</h1>
-      <%= link_to "Rent your first UFO", root_path, class: "btn btn-primary btn-lg" %>
-    </div>
-  <% else %>
-    <h1 class="text-center my-4">YOUR RENTALS</h1>
-    <div class="row">
-      <% @rentals.each do |rental| %>
-      <div class="col-xs-12 col-sm-6 col-lg-3">
-        <div class="card">
-          <div>
-            <div class="card-image">
-              <%= cl_image_tag rental.ufo.photo, alt: "ufo-image", class: "card-img-top" %>
-            </div>
-            <div class="card-text">
-              <p><strong>Rental:</strong> <%= rental.ufo.brand %></p>
-              <p><strong>Start date:</strong> <%= rental.start_date %></p>
-              <p><strong>End date:</strong> <%= rental.end_date %></p>
-            </div>
-              <% unless rental.review.present? %>
-            <div>
-              <%= link_to 'Leave a review', new_rental_review_path(rental.id), class: "btn btn-primary" %>
-            </div>
-            <% end %>
-          </div>
+      <% if @rentals.empty? %>
+        <div class="container-list-own">
+          <h1>You have no rented UFOS :(</h1>
+          <%= link_to "Rent your first UFO", root_path, class: "btn btn-primary btn-lg" %>
         </div>
+      <% else %>
+        <h1 class="text-center">YOUR RENTALS</h1>
+        <div class="row">
+          <% @rentals.each do |rental| %>
+          <div class="col-xs-12 col-sm-6 col-lg-3">
+            <div class="card">
+              <div>
+                <div class="card-image">
+                  <%= cl_image_tag rental.ufo.photo, alt: "ufo-image", class: "card-img-top" %>
+                </div>
+                <div class="card-text">
+                  <p><strong>Rental:</strong> <%= rental.ufo.brand %></p>
+                  <p><strong>Start date:</strong> <%= rental.start_date %></p>
+                  <p><strong>End date:</strong> <%= rental.end_date %></p>
+                </div>
+                  <% unless rental.review.present? %>
+                <div>
+                  <%= link_to 'Leave a review', new_rental_review_path(rental.id), class: "btn btn-primary" %>
+                </div>
+                <% end %>
+              </div>
+            </div>
+            </div>
+          <% end %>
         </div>
       <% end %>
-    </div>
-  <% end %>
 </div>

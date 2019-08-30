@@ -11,14 +11,14 @@
       <p><strong>Age:</strong> <%= @ufo.age %> years</p>
     </div>
     <div class="display-buttons">
-      <div class="p-3">
+      <div class="px-0 py-3">
         <% if policy(@ufo).edit? %>
-        <%= link_to 'Edit', edit_ufo_path(@ufo.id), class: "btn btn-primary" %>
+        <%= link_to 'Edit', edit_ufo_path(@ufo.id), class: "btn btn-primary mr-0" %>
         <% end %>
       </div>
       <div class="p-3">
         <% if policy(@ufo).destroy? && @ufo.availability %>
-        <%= link_to 'Delete this UFO', ufo_path(@ufo), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
+        <%= link_to 'Delete this UFO', ufo_path(@ufo), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger ml-0" %>
         <% end %>
       </div>
     </div>
@@ -28,9 +28,10 @@
       <% if @ufo.reviews.empty? %>
         <p class="text-center">There are no reviews for this UFO</p>
       <% else %>
-        <div class="p-3">
+        <div class="p-3 ">
           <% @ufo.reviews.each do |review| %>
             <%= image_tag review.rental.customer.photo, class: "avatar" %>
+            <div class="p-3">
             <% review.rating.to_i.times do %>
               ⭐️
             <% end %>
