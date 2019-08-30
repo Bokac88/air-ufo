@@ -49,7 +49,7 @@ $green: #27AE60;
 }
 
 @keyframes move-up {
-  0% {top: 500px;}
+  0% {top: 100vh;}
   100% {top: 45px;}
 }
 
@@ -92,6 +92,6 @@ $green: #27AE60;
   width: 30px;
   position: absolute;
   left: 30px;
-  top: 500px;
+  top: 100vh;
   display: none;
 }
