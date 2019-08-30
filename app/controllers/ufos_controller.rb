@@ -26,6 +26,7 @@ class UfosController < ApplicationController
     @ufo.owner = current_user
     authorize @ufo
     if @ufo.save
+      flash[:notice] = "You added a UFO. Thank You."
       redirect_to root_path
     else
       render :new
