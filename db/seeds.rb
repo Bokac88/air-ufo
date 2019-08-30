@@ -8,7 +8,7 @@ User.destroy_all
 user = User.new(
   email: "admin@airufo.com",
   password: 1234567890,
-  photo: "https://randomuser.me/api/portraits/med/men/9.jpg"
+  photo: "https://icon-library.net/images/darth-vader-vector-icon/darth-vader-vector-icon-12.jpg"
 )
 user.save!
 
