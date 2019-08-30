@@ -57,7 +57,7 @@ class UfosController < ApplicationController
   private
 
   def ufo_params
-    params.require(:ufo).permit(:brand, :speed, :age, :price, :description)
+    params.require(:ufo).permit(:brand, :speed, :age, :price, :description, :photo)
   end
 
   def get_ufo
