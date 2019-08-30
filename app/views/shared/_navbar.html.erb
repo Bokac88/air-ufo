@@ -47,6 +47,7 @@
           <div class="dropdown-menu dropdown-menu-right" ari-labelledby="navbarDropdown">
             <%= link_to "My Ufo's", list_own_ufos_path, class: "dropdown-item" %>
             <%= link_to "Rented Ufo's", rentals_path, class: "dropdown-item" %>
+            <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
