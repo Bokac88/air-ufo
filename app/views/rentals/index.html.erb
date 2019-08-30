@@ -15,6 +15,7 @@
                   <%= cl_image_tag rental.ufo.photo, alt: "ufo-image", class: "card-img-top" %>
                 </div>
                 <div class="card-text">
+                  <p class="spaceship_name"><%= rental.ufo.brand %></p>
                   <p><strong>Rental:</strong> <%= rental.ufo.brand %></p>
                   <p><strong>Start date:</strong> <%= rental.start_date %></p>
                   <p><strong>End date:</strong> <%= rental.end_date %></p>
