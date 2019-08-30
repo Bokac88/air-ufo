@@ -12,14 +12,14 @@
         <div class="card">
           <div>
             <div class="card-image">
-            <%= image_tag "ufo1.jpg", alt: "ufo-image", class: "card-img-top" %>
+              <%= image_tag rental.ufo.photo, alt: "ufo-image", class: "card-img-top" %>
             </div>
             <div class="card-text">
-            <p><strong>Rental:</strong> <%= rental.ufo.brand %></p>
-            <p><strong>Start date:</strong> <%= rental.start_date %></p>
-            <p><strong>End date:</strong> <%= rental.end_date %></p>
+              <p><strong>Rental:</strong> <%= rental.ufo.brand %></p>
+              <p><strong>Start date:</strong> <%= rental.start_date %></p>
+              <p><strong>End date:</strong> <%= rental.end_date %></p>
             </div>
-            <% unless rental.review.present? %>
+              <% unless rental.review.present? %>
             <div>
               <%= link_to 'Leave a review', new_rental_review_path(rental.id), class: "btn btn-primary" %>
             </div>

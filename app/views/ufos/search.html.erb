@@ -9,7 +9,7 @@
           <%= link_to ufo_path(ufo.id), class: "link" do %>
           </div>
           <div class="card">
-            <%= image_tag "ufo1.jpg", alt: "ufo-image", class: "card-img-top" %>
+            <%= image_tag ufo.photo, alt: "ufo-image", class: "card-img-top" %>
             <%#= cl_image_tag photo_or_fallback(cocktail), style: "height: 180px; object-fit: cover;" %>
             <div class="card-body">
               <p class="spaceship_name"><%= ufo.brand %></p>
