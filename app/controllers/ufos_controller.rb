@@ -26,6 +26,7 @@ class UfosController < ApplicationController
     @ufo.owner = current_user
     authorize @ufo
     if @ufo.save
+      flash[:notice] = "You added a UFO. Thank You."
       redirect_to root_path
     else
       render :new
@@ -56,7 +57,7 @@ class UfosController < ApplicationController
   private
 
   def ufo_params
-    params.require(:ufo).permit(:brand, :speed, :age, :price, :description)
+    params.require(:ufo).permit(:brand, :speed, :age, :price, :description, :photo)
   end
 
   def get_ufo

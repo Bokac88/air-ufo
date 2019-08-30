@@ -1,7 +1,7 @@
 <div class="container-show">
   <div class="details left-details">
     <div class="picture">
-      <%= image_tag @ufo.photo, alt: "ufo-image" %>
+      <%= cl_image_tag @ufo.photo, alt: "ufo-image" %>
     </div>
     <div class="text-container">
       <h3 class="my-3"><%= @ufo.brand %></h3>
@@ -32,6 +32,10 @@
           <% @ufo.reviews.each do |review| %>
             <%= image_tag review.rental.customer.photo, class: "avatar" %>
             <div class="p-3">
+            <% review.rating.to_i.times do %>
+              ⭐️
+            <% end %>
+            <div class="my-3">
               <%= review.content %>
             </div>
             <hr>

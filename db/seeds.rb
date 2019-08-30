@@ -8,7 +8,7 @@ User.destroy_all
 user = User.new(
   email: "admin@airufo.com",
   password: 1234567890,
-  photo: "https://randomuser.me/api/portraits/med/men/9.jpg"
+  photo: "https://icon-library.net/images/darth-vader-vector-icon/darth-vader-vector-icon-12.jpg"
 )
 user.save!
 
@@ -50,7 +50,7 @@ puts 'Creating 15 fake ufos...'
     price: rand(100_000..500_000),
     description:  Faker::Vehicle.car_options.sample(3).join(", "),
     owner: User.all.sample,
-    photo: UFOS_PICTURES[n - 1]
+    remote_photo_url: UFOS_PICTURES[n - 1]
 )
   ufo.save!
 end

@@ -11,6 +11,7 @@ class RentalsController < ApplicationController
                          end_date: params[:end_date])
     authorize @rental
     @rental.save
+    flash[:notice] = "You rented the UFO. Thank You."
     @ufo.availability = false
     @ufo.save
     redirect_to ufo_path(@ufo)

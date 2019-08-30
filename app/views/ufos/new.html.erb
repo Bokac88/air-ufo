@@ -9,10 +9,11 @@
           <%= f.input :age %>
           <%= f.input :description %>
           <%= f.input :price %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
         </div>
-
         <div class="form-actions">
-          <%= f.submit class: 'btn btn-lg btn-primary' %> <span class="button-divider">|</span>
+          <%= f.submit class: 'btn btn-lg btn-primary' %>
           <%= link_to 'Cancel', ufos_path, class: 'btn btn-lg btn-outline-secondary' %>
         </div>
       <% end %>
