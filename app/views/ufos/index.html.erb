@@ -7,10 +7,10 @@
   <div class="btn-rent-create">
       <% if policy(Ufo).create? %>
         <div class="rent">
-          <%= link_to "Rent a UFO?", "#search", class: "button btn btn-lg btn-banner" %>
+          <%= link_to "Rent a UFO", "#search", class: "button btn btn-lg btn-banner" %>
         </div>
         <div class="list">
-          <%= link_to "List your UFO?", new_ufo_path, class: "button btn btn-lg btn-banner" %>
+          <%= link_to "Add your UFO", new_ufo_path, class: "button btn btn-lg btn-banner" %>
         </div>
       <% end %>
     </div>
