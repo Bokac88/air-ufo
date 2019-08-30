@@ -15,6 +15,21 @@
   transition: 0.3s;
   min-height: 380px;
   border-radius: 3px;
+  text-align: center;
+}
+
+.card-text {
+  padding: 20px;
+  text-align: left;
+}
+
+.button-align {
+  text-align: center;
+}
+
+
+.card-image {
+  width: 100%;
 }
 
 .card:hover{
