@@ -9,6 +9,10 @@
   height: 150px;
 }
 
+.price {
+  text-align: left;
+}
+
 .card {
   margin: 20px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -25,8 +29,6 @@
 
 .features {
   text-align: left;
-  padding-left: 12px;
-
 }
 
 .button-align {
@@ -56,4 +58,5 @@
 .spaceship_name {
   font-size: 20px;
   color: green;
+  text-align: center;
 }
