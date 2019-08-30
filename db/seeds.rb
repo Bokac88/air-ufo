@@ -50,7 +50,7 @@ puts 'Creating 15 fake ufos...'
     price: rand(100_000..500_000),
     description:  Faker::Vehicle.car_options.sample(3).join(", "),
     owner: User.all.sample,
-    photo: UFOS_PICTURES[n - 1]
+    remote_photo_url: UFOS_PICTURES[n - 1]
 )
   ufo.save!
 end

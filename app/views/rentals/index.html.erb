@@ -12,7 +12,7 @@
         <div class="card">
           <div>
             <div class="card-image">
-              <%= image_tag rental.ufo.photo, alt: "ufo-image", class: "card-img-top" %>
+              <%= cl_image_tag rental.ufo.photo, alt: "ufo-image", class: "card-img-top" %>
             </div>
             <div class="card-text">
               <p><strong>Rental:</strong> <%= rental.ufo.brand %></p>
