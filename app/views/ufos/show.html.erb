@@ -1,5 +1,5 @@
-<div class="container_show">
-  <div class="details left_details">
+<div class="container-show">
+  <div class="details left-details">
     <div class="picture">
       <%= image_tag "ufo1.jpg", alt: "ufo-image" %>
     </div>
@@ -10,7 +10,7 @@
       <p><strong>Speed:</strong> <%= @ufo.speed %> MillionKm/h</p>
       <p><strong>Age:</strong> <%= @ufo.age %> years</p>
     </div>
-    <div class="display_buttons">
+    <div class="display-buttons">
       <div class="button">
         <% if policy(@ufo).edit? %>
         <p><%= link_to 'Edit', edit_ufo_path(@ufo.id), class: "btn btn-primary" %></p>
@@ -25,7 +25,7 @@
     <div class="reviews-container px-3">
       <%# <h3 class="mb-3">Reviews:</h3> %>
       <% if @ufo.reviews.empty? %>
-        <p class="text-center">There is no reviews for this UFO</p>
+        <p class="text-center">There are no reviews for this UFO</p>
       <% else %>
         <div class="p-3">
           <% @ufo.reviews.each do |review| %>
@@ -39,14 +39,14 @@
       <% end %>
     </div>
   </div>
-  <div class="details right_details picture picture_right">
+  <div class="details right-details picture picture_right">
     <%= image_tag "map.png", alt: "map-image" %>
     <div class="text-container">
       <p><strong>Location:</strong> Somewhere</p>
       <p><strong>Price:</strong> <%= @ufo.price %> Space$</p>
     </div>
 
-    <div class="display_buttons">
+    <div class="display-buttons">
       <% if @ufo.availability %>
         <%= form_tag ufo_rentals_path(@ufo) do %>
           <div class="input-daterange input-group" id="datepicker">
@@ -64,11 +64,11 @@
             %>
           </div>
           <div class="btn-mg-top">
-          <%= submit_tag 'Availabe Rent Now!', class: "btn btn-success btn-rent" %>
+          <%= submit_tag 'Rent Now!', class: "btn btn-success btn-rent" %>
           </div>
         <% end %>
       <% else %>
-        <p>NOT AVAILABLE</p>
+        <p><strong>Thank you for renting with us!</strong></p>
       <% end %>
     </div>
   </div>
