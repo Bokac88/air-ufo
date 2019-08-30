@@ -1,5 +1,5 @@
-<div class="container_show">
-  <div class="details left_details">
+<div class="container-show">
+  <div class="details left-details">
     <div class="picture">
       <%= image_tag "ufo1.jpg", alt: "ufo-image" %>
     </div>
@@ -40,13 +40,12 @@
       <% end %>
     </div>
   </div>
-  <div class="details right_details picture picture_right">
+  <div class="details right-details picture picture_right">
     <%= image_tag "map.png", alt: "map-image" %>
     <div class="text-container">
       <p><strong>Location:</strong> Somewhere</p>
       <p><strong>Price:</strong> <%= @ufo.price %> Space$</p>
     </div>
-
     <% if Ufo.find(params[:id]).owner_id == current_user.id %>
       <div class="rent_message maincolor">
         <h5>Your UFO is currently</h5>

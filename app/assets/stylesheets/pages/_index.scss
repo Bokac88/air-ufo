@@ -2,3 +2,7 @@
 @import "home";
 @import "show";
 @import "list_own";
+
+html {
+  scroll-behavior: smooth;
+}
