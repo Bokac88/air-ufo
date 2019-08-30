@@ -30,7 +30,7 @@
       <% else %>
         <div class="p-3 ">
           <% @ufo.reviews.each do |review| %>
-            <%= image_tag review.rental.customer.photo, class: "avatar" %>
+            <%= cl_image_tag review.rental.customer.photo, class: "avatar" %>
             <div class="p-3">
               <% review.rating.to_i.times do %>
                 ⭐️
